@@ -1,3 +1,3 @@
 ﻿#include "java.h"
 
-Java java_instance;
+java java_instance;
