@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include <windows.h>
 #include "java/java.h"
 #include "client/client.h"
@@ -11,7 +12,7 @@ unsigned long initialize(LPVOID args)
     if (JNI_GetCreatedJavaVMs(&java_instance.java_vm, 1, &size) != JNI_OK || size == 0)
     {
         LOG_F(ERROR, "Cannot get Java VM.");
-        return 1;
+        throw std::runtime_error("Cannot get Java VM.");
     }
 
     // Check if attach the thread to JVM
@@ -26,8 +27,8 @@ unsigned long initialize(LPVOID args)
             result != JNI_OK
         )
         {
-            LOG_F(ERROR, "Cannot attach the thread to JVM: %ld", result);
-            return 1;
+            LOG_F(ERROR, "Cannot attach the thread to Java VM: %ld", result);
+            throw std::runtime_error("Cannot attach the thread to Java VM.");
         }
     }
 
@@ -35,12 +36,12 @@ unsigned long initialize(LPVOID args)
     if (java_instance.jni_env == nullptr)
     {
         LOG_F(ERROR, "Cannot get Java Environment.");
-        return 1;
+        throw std::runtime_error("Cannot get Java Environment.");
     }
 
-    LOG_F(INFO, "Attached Successfully");
-
-    client::run_modules();
+    LOG_F(INFO, "JVM Attached!");
+    
+    client::start();
     
     return 0;
 }

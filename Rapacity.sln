@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RapacityClient", "RapacityClient\RapacityClient.vcxproj", "{2830D22B-87DE-4D9B-AF82-AF0D6F731F3C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RapacityInjector", "RapacityInjector\RapacityInjector.vcxproj", "{AA515F35-B429-4C05-93EC-FB94745D48D5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2830D22B-87DE-4D9B-AF82-AF0D6F731F3C} = {2830D22B-87DE-4D9B-AF82-AF0D6F731F3C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

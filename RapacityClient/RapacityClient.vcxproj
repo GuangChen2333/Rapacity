@@ -165,7 +165,10 @@
     <ClCompile Include="3rdparty\loguru\loguru.cpp" />
     <ClCompile Include="client\client.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="features\feature_manager.cpp" />
+    <ClCompile Include="features\movement\auto_sprint.cpp" />
     <ClCompile Include="java\java.cpp" />
+    <ClCompile Include="minecraft\minecraft.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="3rdparty\java\include\classfile_constants.h" />
@@ -178,7 +181,10 @@
     <ClInclude Include="3rdparty\java\include\jvmticmlr.h" />
     <ClInclude Include="3rdparty\loguru\loguru.hpp" />
     <ClInclude Include="client\client.h" />
+    <ClInclude Include="features\feature_manager.h" />
+    <ClInclude Include="features\movement\auto_sprint.h" />
     <ClInclude Include="java\java.h" />
+    <ClInclude Include="minecraft\minecraft.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="3rdparty\java\lib\jvm.lib" />
