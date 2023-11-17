@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../3rdparty/Java/include/jni.h"
+#include "../3rdparty/java/include/jni.h"
 
 class minecraft
 {
