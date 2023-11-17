@@ -1,7 +1,5 @@
 ﻿#pragma once
 
-#include <string>
-
 #include "../3rdparty/java/include/jni.h"
 
 enum java_method_type
