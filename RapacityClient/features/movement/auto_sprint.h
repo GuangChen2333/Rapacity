@@ -1,15 +1,13 @@
 ﻿#pragma once
-#include <string>
 
-class auto_sprint
+#include "../feature_base.h"
+
+class auto_sprint final : public feature_base
 {
 public:
     auto_sprint();
 
-    std::string id = "AutoSprint";
+    inline static std::string id = "AutoSprint";
     
-    void enable();
-    void disable();
-
-    bool is_enabled;
+    void loop(LPVOID args) override;
 };

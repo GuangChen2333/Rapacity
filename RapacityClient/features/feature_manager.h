@@ -1,17 +1,18 @@
 ﻿#pragma once
 #include <memory>
 #include <unordered_map>
+#include <string>
 
-#include "movement/auto_sprint.h"
+#include "feature_base.h"
 
 class feature_manager
 {
 public:
     feature_manager();
-    
-    auto_sprint feature_auto_sprint;
+
+    void register_feature(const std::string& id, const std::shared_ptr<feature_base>& instance);
+    std::shared_ptr<void> get_feature(const std::string& id);
+
 private:
-    template<typename T>
-    using feature_ptr = std::shared_ptr<T>;
-    std::unordered_map<std::string, feature_ptr<void>> features_;
+    std::unordered_map<std::string, std::shared_ptr<void>> features_;
 };
